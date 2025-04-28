@@ -21,9 +21,12 @@ class AssetFlare extends AssetProvider {
     required this.name,
   });
 
+  /*@override
+  int get hashCode => hashValues(bundle, name);*/
+  
   @override
-  int get hashCode => hashValues(bundle, name);
-
+  int get hashCode => Object.hash(bundle, name);
+  
   @override
   bool operator ==(dynamic other) {
     if (other.runtimeType != runtimeType) {
